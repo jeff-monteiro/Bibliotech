@@ -32,7 +32,7 @@ const Styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#C4C4C4',
   },
   textInput: {
     width: width - 64,
@@ -46,7 +46,7 @@ const Styles = StyleSheet.create({
   },
     buttonText: {
       alignSelf: 'center',
-      color: '#FFFFFF',
+      color: '#C4C4C4',
       fontSize: 18,
     }
 })

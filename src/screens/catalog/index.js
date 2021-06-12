@@ -1,21 +1,32 @@
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image } from 'react-native'
+import img from './produto.jpg'
+
+const {width} = Dimensions.get('window')
 
 
-const Catalog = ( {ǹavigation} ) => {
+const Catalog = ({navigation} ) => {
 
-  const back = () => {
+  const backLog = () => {
     navigation.replace('Login')
   }
 
   return(
     <SafeAreaView style={Styles.container}>
       <View style={Styles.container}>
-        <TouchableOpacity style={Styles.backButton} onPress={back}>
-          <Ionicons name="chevron-back" size={24} color="black" />
+        <TouchableOpacity style={Styles.backButton} onPress={backLog}>
+          <Ionicons name="chevron-back" size={24} color='#C4C4C4'/>
         </TouchableOpacity>
-        <ScrollView></ScrollView>
+        <Text style={Styles.title}>Categorias</Text>
+        <TextInput style={Styles.textInput}/>
+        <ScrollView>
+          <View>
+            <Image source={img}/>
+            <Text>Texto1</Text>
+            <Text>Texto2</Text>
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   ) 
@@ -29,8 +40,21 @@ const Styles = StyleSheet.create({
     padding: 16,
   },
   backButton: {
-    width: 100,
-    height: 100,
+    width: 50,
+    height: 50,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 32,
+    color: '#C4C4C4',
+  },
+  textInput: {
+    width: width - 32,
+    backgroundColor: '#C4C4C4',
+    padding: 10,
+    marginBottom: 16,
+    borderRadius: 5,
   },
 })
 
