@@ -3,14 +3,19 @@ import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity} from '
 
 const {width} = Dimensions.get('window')
 
-const Login = (props) => {
+const Login = ( {navigation} ) => {
+
+  const doLogin = () => {
+    navigation.replace('Catalog')
+  }
+
   return (
   <View style={Styles.container}>
     <Text style={Styles.label}>Usuário</Text>
     <TextInput style={Styles.textInput} />
     <Text style={Styles.label}>Senha</Text>
     <TextInput style={Styles.textInput}/>
-    <TouchableOpacity style={Styles.button}>
+    <TouchableOpacity style={Styles.button} onPress={doLogin}>
       <Text style={Styles.buttonText}>Login</Text>
     </TouchableOpacity>
   </View>
