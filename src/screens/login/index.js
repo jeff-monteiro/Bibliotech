@@ -1,16 +1,19 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, TextInput, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity} from 'react-native'
 
 const {width} = Dimensions.get('window')
 
 const Login = (props) => {
   return (
-  <SafeAreaView style={Styles.container}>
-    <Text style={Styles.label}>Email</Text>
+  <View style={Styles.container}>
+    <Text style={Styles.label}>Usuário</Text>
     <TextInput style={Styles.textInput} />
     <Text style={Styles.label}>Senha</Text>
     <TextInput style={Styles.textInput}/>
-  </SafeAreaView>
+    <TouchableOpacity style={Styles.button}>
+      <Text style={Styles.buttonText}>Login</Text>
+    </TouchableOpacity>
+  </View>
   )
 }
 
@@ -20,19 +23,27 @@ const Styles = StyleSheet.create({
     backgroundColor: '#3D4D84',
     justifyContent: 'center',
     padding: 16,
-    
+    alignItems: 'center',
   },
   label: {
     fontSize: 16,
     color: '#FFFFFF',
-    marginBottom: 16,
   },
   textInput: {
-    width: width - 16,
+    width: width - 64,
     backgroundColor: '#C4C4C4',
-    padding: 8,
+    padding: 10,
     marginBottom: 16,
+    borderRadius: 5,
   },
+  button: {
+    margin: 16,
+  },
+    buttonText: {
+      alignSelf: 'center',
+      color: '#FFFFFF',
+      fontSize: 18,
+    }
 })
 
 export default Login
