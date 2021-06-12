@@ -1,21 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Login from './src/screens/login';
+import Catalog from './src/screens/catalog';
+import CreditCard from './src/screens/creditCard';
+import CheckOut from './src/screens/checkout';
+
+const Stack = createStackNavigator()
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Olá, Jefferson Monteiro de Moura!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Login' component={Login} options={{ headerShown: false}}/> 
+        <Stack.Screen name='Catalog' component={Catalog} options={{ headerShown: false}} />
+        <Stack.Screen name='CheckOut' component={CheckOut} options={{ headerShown: false}} />
+        <Stack.Screen name='CreditCard' component={CreditCard} options={{ headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
