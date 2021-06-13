@@ -18,7 +18,7 @@ const Catalog = ({navigation}) => {
   const backLog = () => {
     navigation.replace('Login')
   }
-
+  
   return(
     <SafeAreaView style={Styles.container}>
       <View style={Styles.container}>
@@ -26,7 +26,7 @@ const Catalog = ({navigation}) => {
           <Ionicons name="chevron-back" size={24} color='#C4C4C4'/>
         </TouchableOpacity>
         <Text style={Styles.title}>Categorias</Text>
-        <Searchbar placeholder="Search" onChangeText={onChangeSearch} value={searchQuery}/>
+        <TextInput style={Styles.textInput} />
         <ScrollView>
           <View>
             <Image source={img}/>
@@ -56,7 +56,7 @@ const Styles = StyleSheet.create({
     marginBottom: 32,
     color: '#C4C4C4',
   },
-  searchBar: {
+  textInput: {
     width: width - 32,
     backgroundColor: '#C4C4C4',
     padding: 10,
