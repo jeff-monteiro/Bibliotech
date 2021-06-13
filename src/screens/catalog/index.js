@@ -1,12 +1,19 @@
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image } from 'react-native'
+import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Searchbar } from 'react-native'
 import img from './produto.jpg'
 
 const {width} = Dimensions.get('window')
 
 
-const Catalog = ({navigation} ) => {
+const searchBar = ({navigation}) => {
+  const [searchQuery, setSearchQuery] = React.useState()
+
+  const onChangeSearch = query => setSearchQuery(query);
+}
+
+
+const Catalog = ({navigation}) => {
 
   const backLog = () => {
     navigation.replace('Login')
@@ -19,7 +26,7 @@ const Catalog = ({navigation} ) => {
           <Ionicons name="chevron-back" size={24} color='#C4C4C4'/>
         </TouchableOpacity>
         <Text style={Styles.title}>Categorias</Text>
-        <TextInput style={Styles.textInput}/>
+        <Searchbar placeholder="Search" onChangeText={onChangeSearch} value={searchQuery}/>
         <ScrollView>
           <View>
             <Image source={img}/>
@@ -49,7 +56,7 @@ const Styles = StyleSheet.create({
     marginBottom: 32,
     color: '#C4C4C4',
   },
-  textInput: {
+  searchBar: {
     width: width - 32,
     backgroundColor: '#C4C4C4',
     padding: 10,
