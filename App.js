@@ -19,7 +19,6 @@ export default function App() {
         <Stack.Screen name='Login' component={Login} options={{ headerShown: false}}/> 
         <Stack.Screen name='Catalog' component={Catalog} options={{ headerShown: false}} />
         <Stack.Screen name='CheckOut' component={CheckOut} options={{ headerShown: false}} />
-        <Stack.Screen name='CreditCard' component={CreditCard} options={{ headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
