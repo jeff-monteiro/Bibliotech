@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './src/screens/login';
 import Catalog from './src/screens/catalog';
-import CreditCard from './src/screens/creditCard';
 import CheckOut from './src/screens/checkout';
 
 const Stack = createStackNavigator()
