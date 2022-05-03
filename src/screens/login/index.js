@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, Button, TextInput, View, Dimensions, TouchableOpacity} from 'react-native'
 
 const {width} = Dimensions.get('window')
 
@@ -12,12 +12,12 @@ const Login = ( {navigation} ) => {
   return (
   <View style={Styles.container}>
     <Text style={Styles.label}>Usuário</Text>
-    <TextInput style={Styles.textInput} />
+      <TextInput style={Styles.textInput} />
     <Text style={Styles.label}>Senha</Text>
-    <TextInput style={Styles.textInput}/>
-    <TouchableOpacity style={Styles.button} onPress={doLogin}>
+      <TextInput style={Styles.textInput}/>
+    <Button style={Styles.button} onPress={doLogin}>
       <Text style={Styles.buttonText}>Login</Text>
-    </TouchableOpacity>
+    </Button>
   </View>
   )
 }
@@ -25,28 +25,28 @@ const Login = ( {navigation} ) => {
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3D4D84',
+    backgroundColor: '#ffdb58',
     justifyContent: 'center',
     padding: 16,
     alignItems: 'center',
   },
   label: {
     fontSize: 16,
-    color: '#C4C4C4',
+    color: '#000000',
   },
   textInput: {
     width: width - 64,
-    backgroundColor: '#C4C4C4',
-    padding: 10,
+    backgroundColor: '#ffffff',
+    padding: 13,
     marginBottom: 16,
-    borderRadius: 5,
+    borderRadius: 25,
   },
   button: {
     margin: 16,
   },
     buttonText: {
       alignSelf: 'center',
-      color: '#C4C4C4',
+      color: '#000000',
       fontSize: 18,
     }
 })

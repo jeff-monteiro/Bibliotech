@@ -42,7 +42,7 @@ const Catalog = ({navigation}) => {
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3D4D84',
+    backgroundColor: '#ffdb58',
     justifyContent: 'center',
     padding: 16,
   },
@@ -59,9 +59,9 @@ const Styles = StyleSheet.create({
   textInput: {
     width: width - 32,
     backgroundColor: '#C4C4C4',
-    padding: 10,
+    padding: 13,
     marginBottom: 16,
-    borderRadius: 5,
+    borderRadius: 25,
   },
 })
 
