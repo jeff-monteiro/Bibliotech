@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, Button, TextInput, View, Dimensions, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, Button, TextInput, View, Dimensions} from 'react-native'
 
 const {width} = Dimensions.get('window')
 
@@ -20,6 +20,10 @@ const Login = ( {navigation} ) => {
     </Button>
   </View>
   )
+
+  const formLoginButton = () => {
+    
+  }
 }
 
 const Styles = StyleSheet.create({

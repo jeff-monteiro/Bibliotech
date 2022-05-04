@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './src/screens/login';
 import Catalog from './src/screens/catalog';
-import CheckOut from './src/screens/checkout';
+import Readingscreen from './src/screens/readingscreen';
 
 const Stack = createStackNavigator()
 
@@ -17,7 +17,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name='Login' component={Login} options={{ headerShown: false}}/> 
         <Stack.Screen name='Catalog' component={Catalog} options={{ headerShown: false}} />
-        <Stack.Screen name='CheckOut' component={CheckOut} options={{ headerShown: false}} />
+        <Stack.Screen name='CheckOut' component={Readingscreen} options={{ headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
