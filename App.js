@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -17,7 +17,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name='Login' component={Login} options={{ headerShown: false}}/> 
         <Stack.Screen name='Catalog' component={Catalog} options={{ headerShown: false}} />
-        <Stack.Screen name='CheckOut' component={Readingscreen} options={{ headerShown: false}} />
+        <Stack.Screen name='Readingscreen' component={Readingscreen} options={{ headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )

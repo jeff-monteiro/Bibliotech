@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, Button, TextInput, View, Dimensions} from 'react-native'
+import { StyleSheet, Text, Button, TextInput, SafeAreaView, Dimensions} from 'react-native'
+
 
 const {width} = Dimensions.get('window')
 
@@ -10,20 +11,21 @@ const Login = ( {navigation} ) => {
   }
 
   return (
-  <View style={Styles.container}>
+  <SafeAreaView style={Styles.container}>
+    <Text style={Styles.header}>Bibliotech</Text>
     <Text style={Styles.label}>Usuário</Text>
       <TextInput style={Styles.textInput} />
     <Text style={Styles.label}>Senha</Text>
       <TextInput style={Styles.textInput}/>
-    <Button style={Styles.button} onPress={doLogin}>
-      <Text style={Styles.buttonText}>Login</Text>
-    </Button>
-  </View>
+      <Button
+          title="Login" onPress={doLogin} color="#000000"
+        />
+      <Text style={Styles.google}>
+        <TextInput/>
+        <Button title="Google" color="#000000"/>
+      </Text>
+  </SafeAreaView>
   )
-
-  const formLoginButton = () => {
-    
-  }
 }
 
 const Styles = StyleSheet.create({
@@ -36,6 +38,8 @@ const Styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+    marginTop:20,
+    padding:6,
     color: '#000000',
   },
   textInput: {
@@ -48,11 +52,20 @@ const Styles = StyleSheet.create({
   button: {
     margin: 16,
   },
-    buttonText: {
-      alignSelf: 'center',
-      color: '#000000',
-      fontSize: 18,
-    }
+  buttonText: {
+    alignSelf: 'center',
+    color: '#000000',
+    fontSize: 18,
+  },
+  google: {
+    marginTop: 120,
+    alignItems: 'center',
+  },
+  header: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginBottom: 40,
+  },
 })
 
 export default Login
