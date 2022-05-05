@@ -1,8 +1,22 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Searchbar } from 'react-native'
 
-const checkout = (props) => {
-  return <View />;
+const viewerContainer = () => {
+  return (
+    <View>
+      <Text>Hello</Text>
+    </View>
+  )
 }
+/*
+const {width} = Dimensions.get('window')
 
-export default checkout
+const readingscreen = ({navigation}) => {
+
+  const backHome = () => {
+    navigation.replace('Catalog')
+  }
+}
+*/
+
+export default Readingscreen

@@ -1,17 +1,13 @@
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Searchbar } from 'react-native'
+
 import img from './produto.jpg'
-import img2 from './img2.webp'
+import produto2 from './produto2.jpg'
+import produto3 from './produto3.jpg'
+import produto4 from './produto4.jpg'
 
 const {width} = Dimensions.get('window')
-
-
-const searchBar = ({navigation}) => {
-  const [searchQuery, setSearchQuery] = React.useState()
-
-  const onChangeSearch = query => setSearchQuery(query);
-}
 
 
 const Catalog = ({navigation}) => {
@@ -24,16 +20,20 @@ const Catalog = ({navigation}) => {
     <SafeAreaView style={Styles.container}>
       <View style={Styles.container}>
         <TouchableOpacity style={Styles.backButton} onPress={backLog} color="#000000">
-          <Ionicons name="chevron-back" size={24} color='#C4C4C4'/>
+          <Ionicons name="chevron-back" size={24} color='#000000'/>
         </TouchableOpacity>
         <Text style={Styles.title}>Categorias</Text>
         <TextInput style={Styles.textInput} />
         <ScrollView>
-          <View>
-            <Image source={img}/>
-            <Image source={img2}/>
-            <Text>Texto1</Text>
-            <Text>Texto2</Text>
+          <View style={Styles.viewerContainer}>
+            <Image source={img} style={Styles.images}/>
+              <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
+            <Image source={produto2} style={Styles.images}/>
+              <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
+            <Image source={produto3} style={Styles.images}/>
+              <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
+            <Image source={produto4} style={Styles.images}/>
+              <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>  
           </View>
         </ScrollView>
       </View>
@@ -52,20 +52,29 @@ const Styles = StyleSheet.create({
   backButton: {
     width: 50,
     height: 50,
+    color:'#000000',
+    marginBottom: -45,
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
+    textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom: 32,
-    color: '#C4C4C4',
+    marginBottom: 10,
+    color: '#000000',
   },
   textInput: {
     width: width - 32,
-    backgroundColor: '#C4C4C4',
+    backgroundColor: '#ffffff',
     padding: 13,
     marginBottom: 16,
     borderRadius: 25,
   },
+  images: {
+    borderRadius: 8,
+  },
+  viewerContainer: {
+    alignItems: 'center',
+  }
 })
 
 export default Catalog
