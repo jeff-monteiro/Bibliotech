@@ -15,6 +15,9 @@ const Catalog = ({navigation}) => {
   const backLog = () => {
     navigation.replace('Login')
   }
+  const goReading = () => {
+    navigation.replace('Readingscreen')
+  }
   
   return(
     <SafeAreaView style={Styles.container}>
@@ -26,7 +29,7 @@ const Catalog = ({navigation}) => {
         <TextInput style={Styles.textInput} />
         <ScrollView>
           <View style={Styles.viewerContainer}>
-            <Image source={img} style={Styles.images}/>
+            <Image source={img} style={Styles.images} onPress={goReading}/>
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
             <Image source={produto2} style={Styles.images}/>
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>

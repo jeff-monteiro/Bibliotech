@@ -1,22 +1,19 @@
 import React from 'react'
 import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Searchbar } from 'react-native'
 
-const viewerContainer = () => {
+const Readingscreen = () => {
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
+    <SafeAreaView style={Styles.container}>
+      <Text>Hello World</Text>
+    </SafeAreaView>
   )
 }
-/*
-const {width} = Dimensions.get('window')
 
-const readingscreen = ({navigation}) => {
-
-  const backHome = () => {
-    navigation.replace('Catalog')
+const Styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    marginTop: 300,
   }
-}
-*/
+})
 
 export default Readingscreen
