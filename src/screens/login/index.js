@@ -1,5 +1,8 @@
 import React from 'react'
+import  React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, Button, TextInput, SafeAreaView, Dimensions} from 'react-native'
+
+import AsyncStorage from '@react-native/async-storage'
 
 
 const {width} = Dimensions.get('window')
@@ -21,7 +24,6 @@ const Login = ( {navigation} ) => {
           title="Login" onPress={doLogin} color="#000000"
         />
       <Text style={Styles.google}>
-        <TextInput/>
         <Button title="Google" color="#000000"/>
       </Text>
   </SafeAreaView>
