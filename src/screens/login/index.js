@@ -50,7 +50,7 @@ const Login = ( {navigation} ) => {
         value={password}
       />
       <Button
-          title="Login" onPress={handleButton} color="#000000"
+          title="Login" onPress={doLogin} color="#000000"
         />
       <Text style={Styles.google}>
         <Button title="Google" color="#000000"/>

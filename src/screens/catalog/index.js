@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Searchbar } from 'react-native'
+import { Dimensions, SafeAreaView, ScrollView, StyleSheet, View, TouchableOpacity, TextInput, Text, Image, Button } from 'react-native'
 
 import img from './produto.jpg'
 import produto2 from './produto2.jpg'
@@ -29,13 +29,25 @@ const Catalog = ({navigation}) => {
         <TextInput style={Styles.textInput} />
         <ScrollView>
           <View style={Styles.viewerContainer}>
-            <Image source={img} style={Styles.images} onPress={goReading}/>
+            <Image source={img} style={Styles.images}/>
+              <Button
+                title="Ler" onPress={goReading} color="#000000"
+              />
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
             <Image source={produto2} style={Styles.images}/>
+              <Button
+                title="Ler" onPress={goReading} color="#000000"
+              />
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
             <Image source={produto3} style={Styles.images}/>
+              <Button
+                title="Ler" onPress={goReading} color="#000000"
+              />
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>
             <Image source={produto4} style={Styles.images}/>
+              <Button
+                title="Ler" onPress={goReading} color="#000000"
+              />
               <Text>Description: That book talk about the adventures of the boy and friends of him.</Text>  
           </View>
         </ScrollView>
