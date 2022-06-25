@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, Button, TextInput, SafeAreaView, Dimensions} from 'react-native'
+import Toast from 'react-native-toast-message'
+import uuid from 'react-native-uuid'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 const {width} = Dimensions.get('window')
@@ -10,15 +13,44 @@ const Login = ( {navigation} ) => {
     navigation.replace('Catalog')
   }
 
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  async function handleButton(){
+
+    const id = uuid.v4()
+
+    const newData = {
+      id,
+      email,
+      password,
+    }
+
+    await AsyncStorage.setItem("@savepass:passwords", JSON.stringify(newData))
+    Toast.show({
+      type: "success",
+      text: "Senha Cadastrada!"
+    })
+  }
+
   return (
   <SafeAreaView style={Styles.container}>
     <Text style={Styles.header}>Bibliotech</Text>
     <Text style={Styles.label}>Usuário</Text>
-      <TextInput style={Styles.textInput} />
+      <TextInput 
+        style={Styles.textInput}
+        onChangeText={setEmail}
+        value={email}
+       />
     <Text style={Styles.label}>Senha</Text>
-      <TextInput style={Styles.textInput}/>
+      <TextInput 
+        style={Styles.textInput}
+        secureTextEntry
+        onChangeText={setPassword}
+        value={password}
+      />
       <Button
-          title="Login" onPress={doLogin} color="#000000"
+          title="Login" onPress={handleButton} color="#000000"
         />
       <Text style={Styles.google}>
         <Button title="Google" color="#000000"/>
