@@ -12,19 +12,36 @@ const Readingscreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={Styles.container}>
-      <TouchableOpacity style={Styles.backButton} onPress={backRead} color="#000000">
-          <Ionicons name="chevron-back" size={24} color='#000000'/>
-      </TouchableOpacity>
-      <Text>Hello World</Text>
+      <View>
+        <TouchableOpacity style={Styles.backButton} onPress={backRead} color="#000000">
+            <Ionicons name="chevron-back" size={24} color='#000000'/>
+        </TouchableOpacity>
+        <Text style={Styles.content}>Hello World</Text>
+      </View>
     </SafeAreaView>
   )
 }
 
 const Styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: '#ffdb58',
+    justifyContent: 'center',
+    padding: 0,
     alignItems: 'center',
-    marginTop: 300,
+  },
+  backButton: {
+    width: 50,
+    height: 70,
+    color:'#000000',
+    marginTop: -200,
+  },
+  content:{
+    alignItems: 'center',
+    marginBottom: -50,
   }
+
+  
 })
 
 export default Readingscreen
